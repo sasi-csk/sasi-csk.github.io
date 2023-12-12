@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>SOIL MONITOR</title>
+    <link rel="icon" type="x-icon" href="https://thedesignlove.com/wp-content/uploads/2020/08/590-Farmer-Logo-Template.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Recommendation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+	  background-image: url(https://www.shutterstock.com/image-photo/agriculture-artificial-intelligence-technology-smart-600nw-1992722921.jpg);
+	  background-size: cover;
+	  color:#ffffff;
+    }
+    #cropForm {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #recommendation {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cropForm">
+    <h1>Crop Recommendation</h1>
+    <label for="nitrogen">Nitrogen (N):</label>
+    <input type="number" id="nitrogen" required>
+
+    <label for="phosphorus">Phosphorus (P):</label>
+    <input type="number" id="phosphorus" required>
+
+    <label for="potassium">Potassium (K):</label>
+    <input type="number" id="potassium" required>
+
+    <button onclick="getRecommendation()">Get Recommendation</button>
+  </div>
+
+  <div id="recommendation"></div>
+  
+
+  <script>
+    function getRecommendation() {
+      var nitrogen = parseFloat(document.getElementById('nitrogen').value);
+      var phosphorus = parseFloat(document.getElementById('phosphorus').value);
+      var potassium = parseFloat(document.getElementById('potassium').value);
+
+      // Simple recommendation logic (replace with your own logic)
+      var recommendation = "No recommendation available.";
+
+      if (nitrogen >= 50 && phosphorus >= 20 && potassium >= 30){
+    recommendation = "Based on your input, we recommend Wheat.";
+} else if (nitrogen >= 30 && phosphorus >= 15 && potassium >= 20){
+    recommendation = "Based on your input, we recommend Rice.";
+} else if(nitrogen < 20 && phosphorus < 25 && potassium < 15){
+    recommendation = "Based on your input, we recommend Maize.";
+} else if(nitrogen > 10 && phosphorus > 10 && potassium > 10){
+    recommendation = "Based on your input, we recommend Soy.";
+} else if(nitrogen >= 40 && phosphorus >= 25 && potassium >= 35){
+    recommendation = "Based on your input, we recommend Barley.";
+} else if(nitrogen >= 35 && phosphorus >= 20 && potassium >= 25){
+    recommendation = "Based on your input, we recommend Oats.";
+} else if(nitrogen >= 45 && phosphorus >= 30 && potassium >= 40){
+    recommendation = "Based on your input, we recommend Rye.";
+} else if(nitrogen >= 25 && phosphorus >= 15 && potassium >= 20){
+    recommendation = "Based on your input, we recommend Sorghum.";
+} else if(nitrogen >= 30 && phosphorus >= 20 && potassium >= 25){
+    recommendation = "Based on your input, we recommend Millet.";
+} else if(nitrogen >= 20 && phosphorus >= 10 && potassium >= 15){
+    recommendation = "Based on your input, we recommend Sunflower.";
+} else if(nitrogen >= 35 && phosphorus >= 20 && potassium >= 30){
+    recommendation = "Based on your input, we recommend Potato.";
+} else if(nitrogen >= 40 && phosphorus >= 30 && potassium >= 40){
+    recommendation = "Based on your input, we recommend Sugar Beet.";
+} else if(nitrogen >= 30 && phosphorus >= 20 && potassium >= 25){
+    recommendation = "Based on your input, we recommend Cotton.";
+} else if(nitrogen >= 25 && phosphorus >= 15 && potassium >= 20){
+    recommendation = "Based on your input, we recommend Lentils.";
+} else {
+    recommendation = "Based on your input, we recommend further soil analysis for suitable crop recommendations.";
+}
+
+
+
+      document.getElementById('recommendation').innerText = recommendation;
+    }
+function getRecommendation() {
+  var selectedCrop = document.getElementById("cropForm").value;
+  
+  if (selectedCrop === "") {
+    alert("Invalid selection. Please choose a valid crop.");
+  } else {
+    // Proceed with the selected crop
+    alert(" Invalid selection. Please choose a valid crop " );
+    // Add any further actions or processing based on the selected crop
+  }
+}
+
+  </script>
+<script src="new.js"></script>
+</body>
+</html>
+
